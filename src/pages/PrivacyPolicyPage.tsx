@@ -8,7 +8,7 @@ const PrivacyPolicyPage: React.FC = () => {
       <header className="bg-gray-900 border-b border-gray-800">
         <div className="max-w-5xl mx-auto px-4 py-8">
           <h1 className="text-3xl md:text-4xl font-extrabold text-yellow-400">
-            Politique de Confidentialité
+            Politique de Confidentialitéss
           </h1>
           <p className="mt-2 text-sm text-gray-300">
         Mis à jour le{" "}
