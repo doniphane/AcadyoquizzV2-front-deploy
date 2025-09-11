@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  frontend:
+    build: ./ReactacadyoQuizz
+    container_name: react-frontend
+    ports:
+      - "5173:80"  # Port exposé pour Cloudpanel
+    networks:
+      - app-network
+    environment:
+      # URL de l'API via le domaine configuré dans Cloudpanel
+      - VITE_API_URL=https://acadyoquizz.noelsonnelly.xyz
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
