@@ -48,8 +48,10 @@ class AIService {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
-                    'Content-Type': 'application/json'
-                }
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                credentials: 'include'
             });
 
             if (!response.ok) {
@@ -158,8 +160,10 @@ class AIService {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json'
                 },
+                credentials: 'include',
                 body: JSON.stringify({
                     text: text,
                     numberOfQuestions: numberOfQuestions

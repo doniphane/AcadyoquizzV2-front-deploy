@@ -1,8 +1,8 @@
 
 export const COOKIE_OPTIONS = {
-    secure: true, 
-    sameSite: 'lax' as const,  
-    expires: 7,        
+    secure: import.meta.env.VITE_COOKIE_SECURE === 'true', 
+    sameSite: (import.meta.env.VITE_COOKIE_SAME_SITE as 'strict' | 'lax' | 'none') || 'lax',  
+    expires: parseInt(import.meta.env.VITE_JWT_EXPIRY_DAYS || '7'),        
 };
 
 
