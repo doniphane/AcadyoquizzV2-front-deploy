@@ -1,69 +1,129 @@
-# React + TypeScript + Vite
+# AcadyoQuizz - Application de Quiz Éducatif
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+AcadyoQuizz est une application web complète de gestion de quiz éducatifs développée avec React.js et TypeScript. Cette plateforme permet aux enseignants de créer des quiz interactifs et aux étudiants de les passer en temps réel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Fonctionnalités principales
 
-## Expanding the ESLint configuration
+- **Authentification sécurisée** : Système de connexion avec gestion des rôles (Admin/Étudiant)
+- **Gestion des quiz** : Création, modification et suppression de quiz par les administrateurs
+- **Interface intuitive** : Interface utilisateur moderne avec TailwindCSS et Radix UI
+- **Résultats en temps réel** : Affichage instantané des scores et statistiques
+- **Export PDF** : Génération de rapports de résultats au format PDF
+- **Responsive Design** : Compatible mobile et desktop
+- **Gestion des sessions** : Authentification par JWT avec cookies sécurisés
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Technologies utilisées
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+#### Frontend
+- **React 19** - Framework principal
+- **TypeScript** - Typage statique
+- **Vite** - Build tool moderne
+- **TailwindCSS** - Framework CSS utilitaire
+- **Radix UI** - Composants accessibles
+- **React Router Dom** - Navigation
+- **Zustand** - Gestion d'état
+- **React Hook Form** - Gestion des formulaires
+- **Axios** - Client HTTP
+- **jsPDF** - Génération de PDF
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+#### Outils de développement
+- **ESLint** - Linting du code
+- **TypeScript** - Vérification de types
+- **Vite HMR** - Hot Module Replacement
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+#### Infrastructure
+- **Docker** - Conteneurisation
+- **Nginx** - Serveur web
+- **Docker Compose** - Orchestration des conteneurs
+
+## Architecture du projet
+
+```
+AcadyoquizzV2-front-deploy/
+├── src/
+│   ├── components/     # Composants réutilisables
+│   ├── pages/         # Pages de l'application
+│   ├── services/      # Services API
+│   ├── store/         # Gestion d'état Zustand
+│   ├── types/         # Types TypeScript
+│   ├── utils/         # Utilitaires
+│   └── lib/           # Configuration des librairies
+├── public/            # Assets statiques
+├── docs/             # Documentation
+├── docker-compose.yml # Configuration Docker
+├── Dockerfile        # Image Docker
+└── nginx.conf        # Configuration Nginx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Documentation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Pour plus d'informations détaillées, consultez la documentation dans le dossier `docs/` :
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **[Installation](./docs/installation.md)** - Guide d'installation et de configuration
+- **[Docker](./docs/docker.md)** - Containerisation et déploiement Docker
+- **[Déploiement](./docs/deployment.md)** - Guide de déploiement en production
+- **[Tests](./docs/testing.md)** - Guide des tests et validation
+
+## Démarrage rapide
+
+### Prérequis
+- Node.js (version 18 ou plus)
+- pnpm (gestionnaire de paquets)
+- Docker et Docker Compose (pour le déploiement)
+
+### Installation locale
+```bash
+# Cloner le projet
+git clone <url-du-repo>
+cd AcadyoquizzV2-front-deploy
+
+# Installer les dépendances
+pnpm install
+
+# Configurer les variables d'environnement
+cp .env.example .env.local
+
+# Lancer en mode développement
+pnpm dev
 ```
+
+### Avec Docker
+```bash
+# Démarrer l'application avec Docker Compose
+docker-compose up -d
+```
+
+L'application sera accessible sur `http://localhost:5173`
+
+## Scripts disponibles
+
+- `pnpm dev` - Démarre le serveur de développement
+- `pnpm build` - Build de production
+- `pnpm preview` - Prévisualise le build
+- `pnpm lint` - Vérification du code avec ESLint
+
+## Variables d'environnement
+
+Créez un fichier `.env.local` avec les variables suivantes :
+
+```env
+VITE_API_URL=https://votre-api-url.com
+```
+
+## Contribution
+
+1. Fork le projet
+2. Créer une branche pour votre fonctionnalité (`git checkout -b feature/nouvelle-fonctionnalite`)
+3. Commit vos changements (`git commit -m 'Ajout d'une nouvelle fonctionnalité'`)
+4. Push vers la branche (`git push origin feature/nouvelle-fonctionnalite`)
+5. Ouvrir une Pull Request
+
+## Support
+
+Pour toute question ou problème, veuillez consulter la documentation dans le dossier `docs/` ou créer une issue sur le dépôt.
+
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
