@@ -34,10 +34,9 @@ const LegalMentionsPage: React.FC = () => {
         <section id="editeur" className="bg-gray-900/60 rounded-2xl p-6 border border-gray-800">
           <h2 className="text-2xl font-bold text-yellow-300">1) Éditeur du site</h2>
           <ul className="list-disc list-inside mt-3 space-y-1">
-            <li><span className="font-semibold">Nom de l'entreprise :</span> Acadyo Quizz</li>
+            <li><span className="font-semibold">Nom du developpeur :</span> Trules Doniphane </li>
             <li><span className="font-semibold">Adresse :</span> 26 bis chemin Pierre Roger Plate Saint Leu</li>
             <li><span className="font-semibold">Email :</span> trulesdoniphane2@gmail.com</li>
-            <li><span className="font-semibold">Directeur de publication :</span> Trules Doniphane</li>
           </ul>
         </section>
 
@@ -87,7 +86,7 @@ const LegalMentionsPage: React.FC = () => {
           <p className="mt-3">
             Pour toute question ou demande d'information, vous pouvez nous contacter à l'adresse suivante :{" "}
             <a href="mailto:contact@acadyoquizz.com" className="underline">
-              contact@acadyoquizz.com
+            trulesdoniphane2@gmail.com 
             </a>.
           </p>
         </section>

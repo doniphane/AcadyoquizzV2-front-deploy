@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, ProtectedRoute, Layout, Footer, SmartRedirect } from './components';
+import CookieConsent from "react-cookie-consent";
 
 // Import de toutes les pages
 import {
@@ -19,7 +20,6 @@ import {
     LegalMentionsPage,
     CookiePolicyPage
 } from './pages';
-
 
 interface AppRoute {
     path: string;
@@ -179,6 +179,43 @@ function App() {
                     </Route>
                 </Routes>
                 <Footer />
+                
+                {/* Cookie Consent Banner */}
+                <CookieConsent
+                    location="bottom"
+                    buttonText="J'accepte"
+                    cookieName="quizAppCookieConsent"
+                    style={{ 
+                        background: "#2B373B",
+                        textAlign: "left",
+                        fontSize: "14px"
+                    }}
+                    buttonStyle={{ 
+                        color: "#4e503b", 
+                        fontSize: "13px",
+                        backgroundColor: "#f5e042",
+                        borderRadius: "3px",
+                        border: "none",
+                        padding: "8px 16px"
+                    }}
+                    expires={365}
+                    enableDeclineButton
+                    declineButtonText="Refuser"
+                    declineButtonStyle={{
+                        color: "#ffffff",
+                        fontSize: "13px",
+                        backgroundColor: "transparent",
+                        border: "1px solid #ffffff",
+                        borderRadius: "3px",
+                        padding: "8px 16px",
+                        marginRight: "10px"
+                    }}
+                >
+                    Ce site utilise des cookies pour améliorer votre expérience de navigation.{" "}
+                    <a href="/cookie-policy-page" style={{ color: "#f5e042", textDecoration: "underline" }}>
+                        En savoir plus
+                    </a>
+                </CookieConsent>
             </AuthProvider>
         </Router>
     );

@@ -53,6 +53,7 @@ const PrivacyPolicyPage: React.FC = () => {
           <div className="mt-3 grid md:grid-cols-2 gap-4">
             <div>
               <h3 className="font-semibold">Données d’identification</h3>
+                 <br />
               <ul className="list-disc list-inside">
                 <li>Nom, prénom</li>
                 <li>Adresse e-mail</li>
@@ -60,15 +61,14 @@ const PrivacyPolicyPage: React.FC = () => {
             </div>
             <div>
               <h3 className="font-semibold">Données d’usage</h3>
+                 <br />
               <ul className="list-disc list-inside">
                 <li>Résultats et progrès aux quiz</li>
-                <li>Journaux techniques (logs) et adresses IP</li>
+                <li>Journaux de (logs) et adresses IP</li>
               </ul>
             </div>
+            <br />
           </div>
-          <p className="mt-3 text-sm text-gray-300">
-            Le caractère obligatoire des données est indiqué lors de la collecte. À défaut, certains services peuvent être indisponibles.
-          </p>
         </section>
 
 
@@ -112,9 +112,7 @@ const PrivacyPolicyPage: React.FC = () => {
             <li>Mots de passe hachés et salés .</li>
             <li>Chiffrement en transit (HTTPS).</li>
           </ul>
-          <p className="mt-3 text-sm text-gray-300">
-            En cas de violation susceptible d’engendrer un risque élevé pour vos droits et libertés, vous serez informé conformément aux articles 33 et 34 du RGPD.
-          </p>
+         
         </section>
 
         {/* Droits */}
@@ -122,11 +120,10 @@ const PrivacyPolicyPage: React.FC = () => {
           <h2 className="text-2xl font-bold text-yellow-300">8) Vos droits</h2>
           <p className="mt-3">Conformément au RGPD, vous disposez des droits suivants :</p>
           <ul className="list-disc list-inside mt-2 space-y-1">
-            <li>Droit d’accès, de rectification, d’effacement.</li>
+            <li>Droit d’accès, de rectification, et d’effacement.</li>
             <li>Droit à la limitation et à l’opposition.</li>
             <li>Droit à la portabilité des données fournies.</li>
-            <li>Droit de retirer votre consentement à tout moment.</li>
-            <li>Droit d’introduire une réclamation auprès de l’autorité de contrôle compétente (ex. CNIL).</li>
+            <li>Droit de suprimer vos donnée a tout moment </li>
           </ul>
           <p className="mt-3">
             Pour exercer vos droits : envoyez un e-mail à {" "}
@@ -138,14 +135,14 @@ const PrivacyPolicyPage: React.FC = () => {
         <section id="cookies" className="bg-gray-900/60 rounded-2xl p-6 border border-gray-800">
           <h2 className="text-2xl font-bold text-yellow-300">9) Cookies & traceurs</h2>
           <p className="mt-3">
-            Nous utilisons des cookies nécessaires au fonctionnement du site (authentification).  Vous pouvez modifier vos choix à tout moment depuis le lien “Gérer mes cookies”.
+            Nous utilisons des cookies nécessaires au fonctionnement du site (authentification).
           </p>
         </section>
 
         <section id="maj" className="bg-gray-900/60 rounded-2xl p-6 border border-gray-800">
           <h2 className="text-2xl font-bold text-yellow-300">11) Mises à jour de cette politique</h2>
           <p className="mt-3">
-            Cette politique peut évoluer. Toute modification substantielle sera notifiée sur cette page et/ou par e-mail si nécessaire. Veuillez la consulter régulièrement.
+            Cette politique peut évoluer. Toute modification substantielle sera notifiée sur cette page et /ou par e-mail si nécessaire. Veuillez la consulter régulièrement.
           </p>
         </section>
 
@@ -158,7 +155,7 @@ const PrivacyPolicyPage: React.FC = () => {
         </section>
 
         <footer className="text-xs text-gray-400">
-          © {new Date().getFullYear()} Votre Société. Tous droits réservés.
+          © {new Date().getFullYear()} AcadyoQuizz  Tous droits réservés.
         </footer>
       </div>
     </main>
